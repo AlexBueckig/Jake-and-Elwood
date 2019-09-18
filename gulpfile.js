@@ -32,9 +32,9 @@ const style = () => {
 const buildStyle = () => {
   return gulp
     .src('./scss/**/*.scss')
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
     .pipe(sass())
-    .pipe(sourcemaps.write('.'))
+    //.pipe(sourcemaps.write('.'))
     .pipe(postcss([require('autoprefixer')(), require('cssnano')()]))
     .pipe(gulp.dest('./dist/css'));
 };
