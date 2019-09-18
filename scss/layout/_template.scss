@@ -1,0 +1,41 @@
+.main-template {
+  padding: 4em 0;
+}
+
+.main-template > * {
+  grid-column: 2 / -2;
+}
+
+.main-image,
+.main-text {
+  grid-column: 2;
+}
+
+.main-text {
+  margin-bottom: 2em;
+}
+
+.main-image {
+  margin-bottom: 2em;
+  box-shadow: 5px 5px 0px black, 10px 10px map-get($map: $colors, $key: primary);
+}
+
+@include for-tablet-portrait-up {
+  .main-text {
+    grid-column: 3 / -2;
+    grid-row: span 2;
+  }
+
+  .main-image,
+  .secondary-text {
+    grid-column: 2;
+  }
+
+  .main-image {
+    margin: 1em 0;
+  }
+
+  .secondary-text {
+    order: 2;
+  }
+}

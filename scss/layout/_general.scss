@@ -1,0 +1,11 @@
+.main-grid {
+  display: grid;
+  grid-template-columns: minmax(1em, 1fr) minmax(260px, 500px) minmax(1em, 1fr);
+  grid-gap: 0 2em;
+}
+
+@include for-tablet-portrait-up {
+  .main-grid {
+    grid-template-columns: minmax(1em, 1fr) repeat(3, minmax(150px, 320px)) minmax(1em, 1fr);
+  }
+}

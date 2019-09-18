@@ -1,0 +1,38 @@
+.hero {
+  background-image: url(../img/hero-bg.jpg);
+  background-size: cover;
+  color: #ffffff;
+  padding: 8em 0 4em;
+}
+
+.hero > * {
+  grid-column: 2 / -2;
+}
+
+.info {
+  padding: 4em 0;
+  text-align: center;
+}
+
+.col {
+  grid-column: 2 / -2;
+}
+
+@include for-tablet-portrait-up {
+  .hero {
+    padding: 10em 0 6em;
+    background-position: center;
+  }
+
+  .hero > * {
+    grid-column: 2 / span 2;
+  }
+
+  .col {
+    grid-column: span 1;
+  }
+
+  .col:first-child {
+    grid-column: 2 / span 1;
+  }
+}

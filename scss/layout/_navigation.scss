@@ -1,0 +1,112 @@
+.header {
+  background: #000000;
+
+  &-content {
+    display: flex;
+    grid-column: 2 / -2;
+  }
+
+  &-home {
+    background: transparent;
+    position: absolute;
+    width: 100%;
+  }
+}
+
+.logo-link {
+  background: map-get($map: $colors, $key: primary);
+  padding-top: 2em;
+}
+
+.nav {
+  position: fixed;
+  background: #000000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 100%;
+  width: 100%;
+  transform: translateX(0);
+  transition: transform 250ms ease-in;
+}
+
+.nav-open {
+  transform: translateX(-100%);
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 2px solig magenta;
+  height: 100%;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: map-get($map: $colors, $key: primary);
+}
+
+.close-nav {
+  background: 0;
+  border: 0;
+  font-weight: 700;
+  font-size: 3rem;
+  cursor: pointer;
+  padding: 0.5em;
+  position: absolute;
+  color: map-get($map: $colors, $key: primary);
+}
+
+.open-nav {
+  border: 0;
+  background: 0;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.5em;
+  margin-left: auto;
+  font-size: 1.5em;
+}
+
+.current {
+  border-bottom: 1px solid map-get($map: $colors, $key: primary);
+}
+
+@include for-tablet-portrait-up {
+  .header-home .nav {
+    background: transparent;
+  }
+
+  .nav {
+    position: initial;
+  }
+
+  .nav-list {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .nav-item {
+    margin-left: 2em;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+  }
+
+  .open-nav,
+  .close-nav {
+    display: none;
+  }
+}

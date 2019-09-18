@@ -1,0 +1,17 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: map-get($map: $colors, $key: dark-grey);
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
